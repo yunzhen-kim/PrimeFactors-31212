@@ -1,21 +1,18 @@
 #include <vector>
 
+using std::vector;
+
 class PrimeFactors {
 public:
-	void generatePrimeFactors(int n, std::vector<int>& actual_result) {
-		actual_result.clear();
-		if (n < 2) {
-			return;
-		}
-		
-		for (int i = 2; i * i <= n; ++i) {
-			while (n % i == 0) {
-				actual_result.push_back(i);
-				n /= i;
+	vector<int> generatePrimeFactors(int number) {
+		vector<int> result = {};
+		int devisor = 2;
+		for (devisor = 2; number > 1; ++devisor) {
+			while (number % devisor == 0) {
+				result.push_back(devisor);
+				number /= devisor;
 			}
 		}
-		if (n > 1) {
-			actual_result.push_back(n);
-		}
+		return result;
 	}
 };
