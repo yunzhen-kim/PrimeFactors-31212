@@ -3,8 +3,10 @@
 
 using namespace testing;
 
-TEST(PrimeFactorsTest, HandlesSinglePrime) {
-	
+TEST(PrimeFactorsTest, Of1) {
+	PrimeFactors pf;
+	vector<int> expected = {};
+	EXPECT_EQ(expected, pf.generatePrimeFactors(1));
 }
 
 int main() {
