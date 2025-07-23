@@ -69,6 +69,21 @@ TEST_F(PrimeFactorsFixture, Of12) {
 	EXPECT_EQ(expected, pf.generatePrimeFactors(12));
 }
 
+TEST_F(PrimeFactorsFixture, Of100) {
+	expected = {2,2,5,5};
+	EXPECT_EQ(expected, pf.generatePrimeFactors(100));
+}
+
+TEST_F(PrimeFactorsFixture, Of1987) {
+	expected = {1987};
+	EXPECT_EQ(expected, pf.generatePrimeFactors(1987));
+}
+
+TEST_F(PrimeFactorsFixture, Of20250723) {
+	expected = { 3, 17, 397073 };
+	EXPECT_EQ(expected, pf.generatePrimeFactors(20250723));
+}
+
 int main() {
 	InitGoogleMock();
 	return RUN_ALL_TESTS();
