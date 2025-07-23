@@ -4,30 +4,17 @@ using std::vector;
 
 class PrimeFactors {
 public:
-	vector<int> generatePrimeFactors(int n) {
+	vector<int> generatePrimeFactors(int number) {
 		vector<int> result = {};
-		if (n == 1) return result;
-		if (n > 1) {
-			if (n == 4) {
-				while (n % 2 == 0) {
-					result.push_back(2);
-					n /= 2;
+		if (number == 1) return result;
+		if (number > 1) {
+			int devisor = 2;
+			for (devisor = 2; number > 1; ++devisor) {
+				while (number % devisor == 0) {
+					result.push_back(devisor);
+					number /= devisor;
 				}
-				return result;
 			}
-			
-			if (n == 6) {
-				while (n % 2 == 0) {
-					result.push_back(2);
-					n /= 2;
-				}
-				while (n % 3 == 0) {
-					result.push_back(3);
-					n /= 3;
-				}
-				return result;
-			}
-			result.push_back(n);
 			return result;
 		}
 	}
