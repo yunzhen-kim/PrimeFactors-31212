@@ -11,5 +11,10 @@ public:
 			result.push_back(n);
 			return result;
 		}
+
+		if (n == 3) {
+			result.push_back(n);
+			return result;
+		}
 	}
 };

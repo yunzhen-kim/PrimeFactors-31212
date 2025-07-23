@@ -19,6 +19,11 @@ TEST_F(PrimeFactorsFixture, Of2) {
 	EXPECT_EQ(expected, pf.generatePrimeFactors(2));
 }
 
+TEST_F(PrimeFactorsFixture, Of3) {
+	expected = {3};
+	EXPECT_EQ(expected, pf.generatePrimeFactors(3));
+}
+
 int main() {
 	InitGoogleMock();
 	return RUN_ALL_TESTS();
