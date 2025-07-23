@@ -3,15 +3,19 @@
 
 using namespace testing;
 
-TEST(PrimeFactorsTest, Of1) {
+class PrimeFactorsFixture : public Test {
+public:
 	PrimeFactors pf;
-	vector<int> expected = {};
+	vector<int> expected;
+};
+
+TEST_F(PrimeFactorsFixture, Of1) {
+	expected = {};
 	EXPECT_EQ(expected, pf.generatePrimeFactors(1));
 }
 
-TEST(PrimeFactorsTest, Of2) {
-	PrimeFactors pf;
-	vector<int> expected = {2};
+TEST_F(PrimeFactorsFixture, Of2) {
+	expected = {2};
 	EXPECT_EQ(expected, pf.generatePrimeFactors(2));
 }
 
