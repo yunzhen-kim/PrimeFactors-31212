@@ -9,6 +9,12 @@ TEST(PrimeFactorsTest, Of1) {
 	EXPECT_EQ(expected, pf.generatePrimeFactors(1));
 }
 
+TEST(PrimeFactorsTest, Of2) {
+	PrimeFactors pf;
+	vector<int> expected = {2};
+	EXPECT_EQ(expected, pf.generatePrimeFactors(2));
+}
+
 int main() {
 	InitGoogleMock();
 	return RUN_ALL_TESTS();
